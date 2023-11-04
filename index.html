@@ -9,7 +9,7 @@
 </head>
 <body>
 <!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <img src="img/camara.jpg" alt="" width="30" height="20">
         <a class="navbar-brand" href="#">Movie Browser</a>
         <form class="d-flex" role="search">
@@ -23,13 +23,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Inicio <span class="sr-only"></span></a>
+              <a class="nav-link" href="index.html">Inicio <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="login.html">Ingrese</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contactenos.php">PQR</a>
+              <a class="nav-link" href="contactenos.html">PQR</a>
             </li>
             
                 
@@ -38,7 +38,7 @@
 <!-- mini menu -->
 <div role="group" class="movie-filter btn-group">
     <button type="button" title="popular" class="btn btn-success">Popular</button>
-    <button type="button" title="now_playing" class="btn btn-transparent">N ow playing</button>
+    <button type="button" title="now_playing" class="btn btn-transparent">Now playing</button>
     <button type="button" title="top_rated" class="btn btn-transparent">Top rated</button>
     <button type="button" title="upcoming" class="btn btn-transparent">Upcoming</button>
 </div>
@@ -249,18 +249,16 @@
 <!-- paginacion -->
 <ul class="pagination">
     <li class="previous">
-        <a id="previousPage" tabindex="0" role="button" aria-disabled="false">←</a>
+        <a href="index.html"><<</a>
     </li>
     <li>
-        <a role="button" tabindex="0" aria-label="Page 1">1</a>
+        <a href="index.html">1</a>
     </li>
-    <!-- Agrega IDs a las demás páginas si es necesario -->
     <li>
-        <a role="button" tabindex="0" aria-label="Page 2">2</a>
+        <a href="page2.html">2</a>
     </li>
-    <!-- ... -->
     <li class="next">
-        <a id="nextPage" tabindex="0" role="button" aria-disabled="false">→</a>
+        <a href="page2.html">>></a>
     </li>
 </ul>
 

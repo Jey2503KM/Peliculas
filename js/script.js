@@ -1,13 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
     const navbarHeight = navbar.clientHeight; 
-
-    const previousPage = document.getElementById("previousPage");
-    const nextPage = document.getElementById("nextPage");
-    const pageNumbers = document.querySelectorAll(".pagination a[aria-label^='Page']");
-
     let isNavbarFixed = false;
 
+   
     window.addEventListener("scroll", function () {
         if (window.scrollY > navbarHeight) {
             if (!isNavbarFixed) {
@@ -21,19 +17,5 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-    previousPage.addEventListener("click", function (e) {
-        e.preventDefault();
-
-      });
-    nextPage.addEventListener("click", function (e) {
-      e.preventDefault();
- 
-    });
-    pageNumbers.forEach(function (pageNumber) {
-        pageNumber.addEventListener("click", function (e) {
-          e.preventDefault();
-       
-        });
-      });
 
 });
