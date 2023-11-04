@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbarHeight = navbar.clientHeight;
   const buttons = document.querySelectorAll(".movie-filter button");
   const cards = document.querySelectorAll(".col");
+  const filterButtons = document.querySelectorAll(".movie-filter button");
+  const searchInput = document.getElementById("searchInput");
+  const searchButton = document.getElementById("searchButton");
+  const cardTitles = document.querySelectorAll('.card-title');
   let isNavbarFixed = false;
 
   buttons.forEach((button) => {
@@ -21,6 +25,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      filterButtons.forEach((btn) => btn.classList.remove("btn-green"));
+      filterButtons.forEach((btn) => btn.classList.add("btn-transparent"));
+
+      this.classList.remove("btn-transparent");
+      this.classList.add("btn-green");
+    });
+  });
+
+  searchButton.addEventListener("click", function () {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+
+    cards.forEach(function (card, index) {
+      const cardTitle = cardTitles[index].textContent.toLowerCase();
+      const cardContainer = card.closest('.col');
+
+      if (cardTitle.includes(searchTerm)) {
+        cardContainer.style.display = "block";
+      } else {
+        cardContainer.style.display = "none";
+      }
+    });
+  });
+
   window.addEventListener("scroll", function () {
     if (window.scrollY > navbarHeight) {
       if (!isNavbarFixed) {
@@ -34,5 +63,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-
 });

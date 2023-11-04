@@ -11,7 +11,11 @@ body {
     background-color: rgb(40, 221, 131);
     color: white !important;
 }
-
+  .btn-green {
+    background-color: rgb(15, 162, 15) !important;
+    color: white !important;
+  }
+  
 .navbar-brand {
     color: white;
 }
