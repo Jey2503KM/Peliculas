@@ -1,21 +1,29 @@
-body{
-    background-color:black;
+body {
+    background-color: black;
 }
 
-.btn-transparent{
+.btn-transparent {
     color: white;
 }
-.btn-transparent:hover{
-    transition: transform 0.2s; 
+
+.btn-transparent:hover {
+    transition: transform 0.2s;
     background-color: rgb(40, 221, 131);
-    color:white  !important;
+    color: white !important;
 }
-.navbar-brand{
+
+.navbar-brand {
     color: white;
 }
-.nav-link{
+
+.navbar-brand:hover {
     color: white;
 }
+
+.nav-link {
+    color: white;
+}
+
 .navbar-fixed {
     position: fixed;
     top: 0;
@@ -23,34 +31,38 @@ body{
     width: 100%;
     z-index: 1000;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     color: rgb(5, 172, 172);
 }
 
 .card-zoom {
-    transition: transform 0.2s; 
+    transition: transform 0.2s;
     background-color: rgb(62, 60, 60);
 }
+
 .card-rating {
     display: inline-block;
-    background-color: green; 
+    background-color: green;
     color: white;
-    border-radius: 50%; 
+    border-radius: 50%;
     padding: 5px 10px;
 }
 
-.card-title{
+.card-title {
     color: white;
 }
-.card-text{
+
+.card-text {
     color: white;
 }
 
 .card-zoom:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
+
 .pagination {
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
     border-radius: 5px;
     text-align: center;
@@ -62,10 +74,31 @@ body{
     margin: 5px;
     transition: transform 0.2s;
     display: inline-block;
-} 
+}
 
 .pagination a:hover {
     transform: scale(1.2);
     color: green !important;
 }
+.form-signin {
+    background-color: #484747; 
+    border: 1px solid #000000; 
+    border-radius: 10px; 
+    padding: 20px;
+    margin: 20px;
+  }
+  .blanco {
+    color: rgb(255, 255, 255);
+  }
+  .boton-continuar {
+    margin-top: 10px;
+    background-color: #000000; 
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
 
+  }
+  
+  .boton-continuar:hover {
+    background-color: #66f0ff; 
+    color: white;
+  }

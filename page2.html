@@ -1,268 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popular/MovieBrowser</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popular/MovieBrowser</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/estilos.css">
 </head>
+
 <body>
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <img src="img/camara.jpg" alt="" width="30" height="20">
-        <a class="navbar-brand" href="#">Movie Browser</a>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.php">Inicio <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Ingrese</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contactenos.php">PQR</a>
-            </li>
-            
-                
-              </div>
-</nav>
-<!-- mini menu -->
-<div role="group" class="movie-filter btn-group">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <img src="img/camara.jpg" alt="" width="30" height="20">
+    <a class="navbar-brand" href="#">Movie Browser</a>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Inicio <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Ingrese</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactenos.php">PQR</a>
+        </li>
+
+
+    </div>
+  </nav>
+  <!-- mini menu -->
+  <div role="group" class="movie-filter btn-group">
     <button type="button" title="popular" class="btn btn-success">Popular</button>
-    <button type="button" title="now_playing" class="btn btn-transparent">N ow playing</button>
+    <button type="button" title="now_playing" class="btn btn-transparent">Now playing</button>
     <button type="button" title="top_rated" class="btn btn-transparent">Top rated</button>
     <button type="button" title="upcoming" class="btn btn-transparent">Upcoming</button>
-</div>
-<!-- cards -->
-<div class="row row-cols-1 row-cols-md-5 g-4">
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/21.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">7.192</span>
-        <div class="card-title">Talk to Me</div>
-        <p class="card-text">Horror, Thriller</p>
+  </div>
+  <!-- cards -->
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="col" data-category="now_playing">
+      <div class="card h-100 card-zoom">
+        <img src="/img/21.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">7.192</span>
+          <div class="card-title">Talk to Me</div>
+          <p class="card-text">Horror, Thriller</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="popular">
+      <div class="card h-100 card-zoom">
+        <img src="/img/22.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">8.5</span>
+          <div class="card-title">Once Upon a Studio</div>
+          <p class="card-text">Family, Animation, Fantasy, Comedy</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="now_playing">
+      <div class="card h-100 card-zoom">
+        <img src="/img/23.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">4.592</span>
+          <div class="card-title">Meteor Storm</div>
+          <p class="card-text">Science Fiction, Adventure, TV Movie</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="popular">
+      <div class="card h-100 card-zoom">
+        <img src="/img/24.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">7.47</span>
+          <div class="card-title">Transformers: Rise of the Beasts</div>
+          <p class="card-text"> Action, Adventure, Science Fiction</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="top_rated">
+      <div class="card h-100 card-zoom">
+        <img src="/img/25.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">7.221</span>
+          <div class="card-title">Barbie</div>
+          <p class="card-text"> Comedy, Adventure, Fantasy</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="upcoming">
+      <div class="card h-100 card-zoom">
+        <img src="/img/26.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">7.595</span>
+          <div class="card-title">Nowhere</div>
+          <p class="card-text"> Thriller, Drama</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="upcoming">
+      <div class="card h-100 card-zoom">
+        <img src="/img/27.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">8.409</span>
+          <div class="card-title">Spider-Man: Across the Spider-Verse</div>
+          <p class="card-text">Animation, Action, Adventure</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="popular">
+      <div class="card h-100 card-zoom">
+        <img src="/img/28.jpg" class="card-img-top" alt="...">
+        <span class="card-rating">7.745</span>
+        <div class="card-body">
+          <div class="card-title">Elemental</div>
+          <p class="card-text">Animation, Comedy, Family, Fantasy, Romance</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="now_playing">
+      <div class="card h-100 card-zoom">
+        <img src="/img/29.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">7</span>
+          <div class="card-title">Mortal Kombat Legends: Cage Match</div>
+          <p class="card-text">Animation, Action, Fantasy </p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="popular">
+      <div class="card h-100 card-zoom">
+        <img src="/img/30.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">6.1</span>
+          <div class="card-title">Sila Ay Akin</div>
+          <p class="card-text">Drama</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="now_playing">
+      <div class="card h-100 card-zoom">
+        <img src="/img/31.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">7.347</span>
+          <div class="card-title">The Burial</div>
+          <p class="card-text">Comedy, Drama</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="top_rated">
+      <div class="card h-100 card-zoom">
+        <img src="/img/32.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">6.969</span>
+          <div class="card-title">After Everything</div>
+          <p class="card-text">Romance, Drama</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="popular">
+      <div class="card h-100 card-zoom">
+        <img src="/img/33.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">7.759</span>
+          <div class="card-title">The Super Mario Bros. Movie</div>
+          <p class="card-text">Animation, Family, Adventure, Fantasy, Comedy</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="now_playing">
+      <div class="card h-100 card-zoom">
+        <img src="/img/34.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">7.798</span>
+          <div class="card-title">John Wick: Chapter 4</div>
+          <p class="card-text">Action, Thriller, Crime</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="upcoming">
+      <div class="card h-100 card-zoom">
+        <img src="/img/35.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">6.82</span>
+          <div class="mb-1 mr-4 card-title">A Haunting in Venice</div>
+          <p class="card-text">Mystery, Thriller, Crime</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="now_playing">
+      <div class="card h-100 card-zoom">
+        <img src="/img/36.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">5.448</span>
+          <div class="card-title">The Conference</div>
+          <p class="card-text">Horror, Comedy, Thriller</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="upcoming">
+      <div class="card h-100 card-zoom">
+        <img src="/img/37.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">5.619</span>
+          <div class="card-title">57 Seconds</div>
+          <p class="card-text"> Thriller, Science Fiction, Action</p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="popular">
+      <div class="card h-100 card-zoom">
+        <img src="/img/38.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">8.246</span>
+          <div class="card-title">Oppenheimer</div>
+          <p class="card-text">Drama, History </p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="top_rated">
+      <div class="card h-100 card-zoom">
+        <img src="/img/39.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">6.859</span>
+          <div class="card-title">The Flash</div>
+          <p class="card-text">Action, Adventure, Science Fiction </p>
+        </div>
+      </div>
+    </div>
+    <div class="col" data-category="popular">
+      <div class="card h-100 card-zoom">
+        <img src="/img/40.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <span class="card-rating">6.714</span>
+          <div class="card-title">LEGO Marvel Avengers: Code Red</div>
+          <p class="card-text">Animation, Action, Family</p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/22.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">8.5</span>
-        <div class="card-title">Once Upon a Studio</div>
-        <p class="card-text">Family, Animation, Fantasy, Comedy</p>
-      </div>
-    </div>
   </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/23.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">4.592</span>
-        <div class="card-title">Meteor Storm</div>
-        <p class="card-text">Science Fiction, Adventure, TV Movie</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/24.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">7.47</span>
-        <div class="card-title">Transformers: Rise of the Beasts</div>
-        <p class="card-text"> Action, Adventure, Science Fiction</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/25.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">7.221</span>
-        <div class="card-title">Barbie</div>
-        <p class="card-text"> Comedy, Adventure, Fantasy</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/26.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">7.595</span>
-        <div class="card-title">Nowhere</div>
-        <p class="card-text"> Thriller, Drama</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/27.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">8.409</span>
-        <div class="card-title">Spider-Man: Across the Spider-Verse</div>
-        <p class="card-text">Animation, Action, Adventure</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/28.jpg" class="card-img-top" alt="...">
-      <span class="card-rating">7.745</span>
-      <div class="card-body">
-        <div class="card-title">Elemental</div>
-        <p class="card-text">Animation, Comedy, Family, Fantasy, Romance</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/29.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">7</span>
-        <div class="card-title">Mortal Kombat Legends: Cage Match</div>
-        <p class="card-text">Animation, Action, Fantasy </p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/30.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">6.1</span>
-        <div class="card-title">Sila Ay Akin</div>
-        <p class="card-text">Drama</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/31.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">7.347</span>
-        <div class="card-title">The Burial</div>
-        <p class="card-text">Comedy, Drama</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/32.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">6.969</span>
-        <div class="card-title">After Everything</div>
-        <p class="card-text">Romance, Drama</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/33.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">7.759</span>
-        <div class="card-title">The Super Mario Bros. Movie</div>
-        <p class="card-text">Animation, Family, Adventure, Fantasy, Comedy</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/34.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">7.798</span>
-        <div class="card-title">John Wick: Chapter 4</div>
-        <p class="card-text">Action, Thriller, Crime</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/35.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">6.82</span>
-        <div class="mb-1 mr-4 card-title">A Haunting in Venice</div>
-        <p class="card-text">Mystery, Thriller, Crime</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/36.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">5.448</span>
-        <div class="card-title">The Conference</div>
-        <p class="card-text">Horror, Comedy, Thriller</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/37.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">5.619</span>
-        <div class="card-title">57 Seconds</div>
-        <p class="card-text"> Thriller, Science Fiction, Action</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/38.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">8.246</span>
-        <div class="card-title">Oppenheimer</div>
-        <p class="card-text">Drama, History </p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/39.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">6.859</span>
-        <div class="card-title">The Flash</div>
-        <p class="card-text">Action, Adventure, Science Fiction </p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100 card-zoom">
-      <img src="/img/40.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <span class="card-rating">6.714</span>
-        <div class="card-title">LEGO Marvel Avengers: Code Red</div>
-        <p class="card-text">Animation, Action, Family</p>
-      </div>
-    </div>
-  </div>
-  </div>
-</div>
-<!-- paginacion -->
-<ul class="pagination">
-  <li class="previous">
-      <a href=""><<</a>
-  </li>
-  <li>
+  <!-- paginacion -->
+  <ul class="pagination">
+    <li class="previous">
+      <a href="index.html">
+        <<< /a>
+    </li>
+    <li>
       <a href="index.html">1</a>
-  </li>
-  <li>
+    </li>
+    <li>
       <a href="page2.html">2</a>
-  </li>
-  <li class="next">
+    </li>
+    <li class="next">
       <a href="">>></a>
-  </li>
-</ul>
+    </li>
+  </ul>
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="/js/script.js"></script>
+
 </html>
