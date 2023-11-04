@@ -11,7 +11,21 @@
 </head>
 
 <body>
-  <!-- navbar -->
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popular/MovieBrowser</title>
+  <!-- Agregar enlaces a CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+
+<body>
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <img src="img/camara.jpg" alt="" width="30" height="20">
     <a class="navbar-brand" href="#">Movie Browser</a>
@@ -23,18 +37,57 @@
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Inicio <span class="sr-only"></span></a>
+          <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="login.html">Ingrese</a>
         </li>
-       
+      </ul>
+    </div>
+  </nav>
 
+  <!-- Mini menú de filtro -->
+  <div class="movie-filter btn-group">
+    <!-- Botones para filtrar -->
+  </div>
 
+  <!-- Sección de tarjetas de películas -->
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+    <!-- Tarjetas de películas aquí -->
+  </div>
+
+  <!-- Sección de detalles de la película -->
+  <div id="detallesPelicula" style="display: none;">
+    <h2 id="tituloPelicula"></h2>
+    <img id="imagenPelicula" src="" alt="Película">
+    <p id="sinopsisPelicula"></p>
+    <p id="actoresPelicula"></p>
+
+    <!-- Sección de comentarios -->
+    <div id="seccionComentarios" style="display: none;">
+      <h3>Comentarios</h3>
+      <div id="listaComentarios"></div>
+      <textarea id="nuevoComentario" placeholder="Escribe un comentario"></textarea>
+      <button onclick="agregarComentario()">Agregar Comentario</button>
+    </div>
+  </div>
+
+  <!-- Paginación -->
+  <ul class="pagination">
+    <!-- Contenido de paginación -->
+  </ul>
+
+  <!-- Scripts al final del cuerpo del HTML -->
+  <script>
+    // Código JavaScript para mostrar detalles de la película y agregar comentarios
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="/js/script.js"></script>
+</body>
     </div>
   </nav>
   <!-- mini menu -->
@@ -266,6 +319,62 @@
   </ul>
 
 </body>
+<script>
+  // Función para mostrar los detalles de la película al hacer clic en un elemento
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    card.addEventListener('click', function() {
+      const titulo = this.querySelector('.card-title').textContent;
+      const sinopsis = obtenerSinopsis(titulo); // Aquí debes definir la sinopsis para cada película
+      const actores = obtenerActores(titulo); // Aquí debes definir los actores para cada película
+      const imagen = this.querySelector('.card-img-top').src;
+
+      document.getElementById('detallesPelicula').style.display = 'block';
+      document.getElementById('tituloPelicula').innerText = titulo;
+      document.getElementById('sinopsisPelicula').innerText = `Sinopsis: ${sinopsis}`;
+      document.getElementById('actoresPelicula').innerText = `Actores: ${actores}`;
+      document.getElementById('imagenPelicula').src = imagen;
+
+      // Mostrar la sección de comentarios al ver los detalles de la película
+      document.getElementById('seccionComentarios').style.display = 'block';
+    });
+  });
+
+  // Función para agregar un comentario
+  function agregarComentario() {
+    const nuevoComentario = document.getElementById('nuevoComentario').value;
+    const listaComentarios = document.getElementById('listaComentarios');
+    const comentario = document.createElement('p');
+    comentario.innerText = nuevoComentario;
+    listaComentarios.appendChild(comentario);
+    document.getElementById('nuevoComentario').value = ''; // Limpiar el área de texto después de agregar el comentario
+  }
+
+  // Funciones para obtener la sinopsis y actores de cada película (simulación)
+  function obtenerSinopsis(titulo) {
+    // Aquí podrías utilizar una lógica para obtener la sinopsis de la película
+    // Devuelve la sinopsis correspondiente al título de la película
+    // Ejemplo:
+    if (titulo === 'Five Night at Freddy\'s') {
+      return 'Sinopsis de Five Night at Freddy\'s';
+    } else if (titulo === 'Saw X') {
+      return 'Sinopsis de Saw X';
+    }
+    // Agrega más condiciones para otras películas
+  }
+
+  function obtenerActores(titulo) {
+    // Aquí podrías utilizar una lógica para obtener los actores de la película
+    // Devuelve los actores correspondientes al título de la película
+    // Ejemplo:
+    if (titulo === 'Five Night at Freddy\'s') {
+      return 'Actores de Five Night at Freddy\'s';
+    } else if (titulo === 'Saw X') {
+      return 'Actores de Saw X';
+    }
+    // Agrega más condiciones para otras películas
+  }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="/js/script.js"></script>
