@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.getElementById("searchInput");
   const searchButton = document.getElementById("searchButton");
   const cardTitles = document.querySelectorAll('.card-title');
+  const card = document.querySelectorAll('.card');
   let isNavbarFixed = false;
 
   buttons.forEach((button) => {
@@ -49,7 +50,46 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+  card.forEach(card => {
+    card.addEventListener('click', function() {
+      const titulo = this.querySelector('.card-title').textContent;
+      const sinopsis = obtenerSinopsis(titulo);
+      const actores = obtenerActores(titulo); 
+      const imagen = this.querySelector('.card-img-top').src;
+      document.getElementById('detallesPelicula').style.display = 'block';
+      document.getElementById('tituloPelicula').innerText = titulo;
+      document.getElementById('sinopsisPelicula').innerText = `Sinopsis: ${sinopsis}`;
+      document.getElementById('actoresPelicula').innerText = `Actores: ${actores}`;
+      document.getElementById('imagenPelicula').src = imagen;
+      document.getElementById('seccionComentarios').style.display = 'block';
+    });
+  });
+  function agregarComentario() {
+    const nuevoComentario = document.getElementById('nuevoComentario').value;
+    const listaComentarios = document.getElementById('listaComentarios');
+    const comentario = document.createElement('p');
+    comentario.innerText = nuevoComentario;
+    listaComentarios.appendChild(comentario);
+    document.getElementById('nuevoComentario').value = ''; 
+  }
 
+ 
+  function obtenerSinopsis(titulo) {
+    if (titulo === 'Five Night at Freddy\'s') {
+      return 'Sinopsis de Five Night at Freddy\'s';
+    } else if (titulo === 'Saw X') {
+      return 'Sinopsis de Saw X';
+    }
+  }
+
+  function obtenerActores(titulo) {
+    
+    if (titulo === 'Five Night at Freddy\'s') {
+      return 'Actores de Five Night at Freddy\'s';
+    } else if (titulo === 'Saw X') {
+      return 'Actores de Saw X';
+    }
+  }
   window.addEventListener("scroll", function () {
     if (window.scrollY > navbarHeight) {
       if (!isNavbarFixed) {
