@@ -11,11 +11,22 @@ body {
     background-color: rgb(40, 221, 131);
     color: white !important;
 }
-  .btn-green {
+
+.btn-green {
     background-color: rgb(15, 162, 15) !important;
     color: white !important;
-  }
-  
+}
+
+.open-movie-details {
+    background-color: rgb(11, 91, 11);
+    color: white;
+}
+
+.open-movie-details:hover {
+    background-color: rgb(15, 155, 15);
+    color: white;
+}
+
 .navbar-brand {
     color: white;
 }
@@ -46,11 +57,12 @@ body {
 }
 
 .card-rating {
-    display: inline-block;
     background-color: green;
     color: white;
-    border-radius: 50%;
-    padding: 5px 10px; 
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+
 }
 
 .card-title {
@@ -70,39 +82,58 @@ body {
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+    margin-top: 20px;
 }
 
 .pagination a {
     color: white !important;
     font-size: 16px;
     margin: 5px;
-    transition: transform 0.2s;
-    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
 }
 
 .pagination a:hover {
     transform: scale(1.2);
-    color: green !important;
+    color: rgb(15, 162, 15) !important;
 }
+
+.pagination .previous a,
+.pagination .next a {
+    padding: 5px 10px;
+    background-color: rgb(95, 97, 96);
+}
+
+.pagination .previous a:hover,
+.pagination .next a:hover {
+    background-color: rgb(15, 162, 15);
+    color: rgb(255, 255, 255) !important;
+}
+
 .form-signin {
-    background-color: #484747; 
-    border: 1px solid #000000; 
-    border-radius: 10px; 
+    background-color: #484747;
+    border: 1px solid #000000;
+    border-radius: 10px;
     padding: 20px;
     margin: 20px;
-  }
-  .blanco {
+}
+
+.blanco {
     color: rgb(255, 255, 255);
-  }
-  .boton-continuar {
+}
+
+.boton-continuar {
     margin-top: 10px;
-    background-color: #000000; 
+    background-color: #000000;
     color: white;
     transition: background-color 0.3s, color 0.3s;
 
-  }
-  
-  .boton-continuar:hover {
-    background-color: #66f0ff; 
+}
+
+.boton-continuar:hover {
+    background-color: #66f0ff;
     color: white;
-  }
+}
