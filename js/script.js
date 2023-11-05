@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.querySelector("input[type='search']");
   const searchButton = document.querySelector("button[type='submit']");
   const cardTitles = document.querySelectorAll('.card-title');
+  const modal = new bootstrap.Modal(document.getElementById('movieModal'));
+  const openButtons = document.querySelectorAll('.open-movie-details');
   let isNavbarFixed = false;
 
   buttons.forEach((button) => {
@@ -47,6 +49,24 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         cardContainer.style.display = "none";
       }
+    });
+  });
+  openButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const movieId = button.getAttribute('data-movie-id'); // Obtiene el ID de la película
+  
+      // Aquí debes cargar los detalles de la película con el ID correspondiente
+      // Puedes usar una función o un objeto que contenga los detalles de todas las películas.
+  
+      // Luego, actualiza el contenido del modal con los detalles de la película seleccionada
+      const modalTitle = document.querySelector('.modal-title');
+      const modalBody = document.querySelector('.modal-body');
+  
+      // Aquí debes llenar modalTitle y modalBody con los detalles de la película correspondiente
+  
+      // Abre el modal
+      const movieModal = new bootstrap.Modal(document.getElementById('movieModal'));
+      movieModal.show();
     });
   });
 
