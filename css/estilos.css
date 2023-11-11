@@ -2,6 +2,24 @@ body {
     background-color: black;
 }
 
+.margin-top-placeholder {
+    height: 80px; 
+  }
+.btn-search {
+    background-color: #149b14;
+    border-radius: 10%;
+    border-color: #1ab81a;
+    color: #fff;
+}
+
+.btn-search:hover {
+    background-color: #1ff71f;
+    border-radius: 10%;
+    border-color: #1ab81a;
+    color: #fff;
+}
+
+
 .btn-transparent {
     color: white;
 }
@@ -27,28 +45,26 @@ body {
     color: white;
 }
 
-.navbar-brand {
-    color: white;
-}
-
-.navbar-brand:hover {
-    color: white;
-}
-
-.nav-link {
-    color: white;
+.navbar {
+    background-color: #303131;
+    transition: background-color 0.1s ease;
 }
 
 .navbar-fixed {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
+    top: 0;
     z-index: 1000;
 }
 
-.nav-link:hover {
-    color: rgb(5, 172, 172);
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: rgb(40, 221, 131);
 }
 
 .card-zoom {
@@ -134,35 +150,32 @@ body {
 }
 
 .boton-continuar:hover {
-    background-color: #66f0ff;
+    background-color: #149b14;
     color: white;
 }
 
 .modal-content {
-    background-color: #262626; 
-    color: #fff; 
+    background-color: #262626;
+    color: #fff;
     max-height: 90vh;
-    overflow-y: auto; 
-  }
-  
-  .modal-title {
+    overflow-y: auto;
+}
+
+.modal-title {
     color: #4CAF50;
-  }
-  .movie-cast__list{
+}
+
+.movie-cast__list {
     background-color: rgb(56, 56, 57);
-  }
+}
 
-  .btn-close {
-    color: #fff; 
-  }
-  
- 
-  .btn-secondary {
-    background-color: #4CAF50; 
-    border: none;
-  }
 
-  .btn-secondary:hover {
-    background-color: #45A148; 
-  }
-  
+.btn-modal {
+    background-color: #0B5B0B;
+    color: white;
+}
+
+.btn-modal:hover {
+    background-color: #149b14;
+    color: white;
+}

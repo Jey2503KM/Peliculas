@@ -1,23 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".navbar");
   const navbarHeight = navbar.clientHeight;
-  const buttons = document.querySelectorAll(".movie-filter button");
-  const cards = document.querySelectorAll(".col");
-  const filterButtons = document.querySelectorAll(".movie-filter button");
-  const searchInput = document.querySelector("input[type='search']");
-  const searchButton = document.querySelector("button[type='submit']");
-  const cardTitles = document.querySelectorAll('.card-title');
-  const modal = new bootstrap.Modal(document.getElementById('movieModal'));
-  const openButtons = document.querySelectorAll('.open-movie-details');
   let isNavbarFixed = false;
+  const buttons = document.querySelectorAll(".movie-filter button");
+  const filterButtons = document.querySelectorAll(".movie-filter button");
+  const Modal = document.getElementById('myModal');
+  const searchForm = document.getElementById("searchForm");
+  const allCards = document.querySelectorAll(".col");
+  const allCardsArray = Array.from(allCards);
 
+  // Búsqueda
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const searchTerm = this.querySelector('input[type="search"]').value.toLowerCase();
+
+    // Realizar la búsqueda en todas las tarjetas
+    allCardsArray.forEach((card) => {
+      const cardTitle = card.querySelector(".card-title").textContent.toLowerCase();
+      const shouldShow = cardTitle.includes(searchTerm);
+      card.style.display = shouldShow ? "block" : "none";
+    });
+  });
+
+  // Mini menu
   buttons.forEach((button) => {
     button.addEventListener("click", function () {
       const category = button.getAttribute("title");
-
-      cards.forEach((card) => {
+      allCardsArray.forEach((card) => {
         const cardCategory = card.getAttribute("data-category");
-
         if (category === "popular" || cardCategory === category) {
           card.style.display = "block";
         } else {
@@ -27,50 +37,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Efectos del mini menú
   filterButtons.forEach((button) => {
     button.addEventListener("click", function () {
       filterButtons.forEach((btn) => btn.classList.remove("btn-green"));
       filterButtons.forEach((btn) => btn.classList.add("btn-transparent"));
-
       this.classList.remove("btn-transparent");
       this.classList.add("btn-green");
     });
   });
 
-  searchButton.addEventListener("click", function () {
-    const searchTerm = searchInput.value.trim().toLowerCase();
-
-    cards.forEach(function (card, index) {
-      const cardTitle = cardTitles[index].textContent.toLowerCase();
-      const cardContainer = card.closest('.col');
-
-      if (cardTitle.includes(searchTerm)) {
-        cardContainer.style.display = "block";
-      } else {
-        cardContainer.style.display = "none";
-      }
-    });
-  });
-  openButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const movieId = button.getAttribute('data-movie-id'); 
-      const modalTitle = document.querySelector('.modal-title');
-      const modalBody = document.querySelector('.modal-body');
-      const movieModal = new bootstrap.Modal(document.getElementById('movieModal'));
-      movieModal.show();
-    });
+  // Modal 
+  Modal.addEventListener('shown.bs.modal', () => {
+    myInput.focus();
   });
 
+  // Efecto Navbar
   window.addEventListener("scroll", function () {
-    if (window.scrollY > navbarHeight) {
+    const scrollY = window.scrollY;
+    if (scrollY > navbarHeight) {
       if (!isNavbarFixed) {
         navbar.classList.add("navbar-fixed");
         isNavbarFixed = true;
-      }
-    } else {
-      if (isNavbarFixed) {
-        navbar.classList.remove("navbar-fixed");
-        isNavbarFixed = false;
       }
     }
   });
